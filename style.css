@@ -713,11 +713,11 @@ ul { list-style: none; }
 .kit-intro-label {
   display: inline-block;
   font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gris);
+  color: var(--anthracite);
   position: relative;
   padding: 0 2.5rem;
 }
