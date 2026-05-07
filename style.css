@@ -305,7 +305,7 @@ ul { list-style: none; }
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding-top: 5rem;
+  padding-top: clamp(3.5rem, 8vw, 5rem);
 }
 
 /* Texture en filigrane diagonale */
@@ -403,8 +403,8 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: clamp(4rem, 8vw, 6rem);
-  padding-bottom: clamp(3rem, 6vw, 5rem);
+  padding-top: clamp(1.5rem, 5vw, 4rem);
+  padding-bottom: clamp(2.5rem, 6vw, 5rem);
   max-width: 780px;
 }
 
@@ -436,8 +436,7 @@ ul { list-style: none; }
   margin-bottom: 1.2rem;
 }
 .hero-title-accent {
-  color: var(--or);
-  -webkit-text-stroke: 1px rgba(255,255,255,0.15);
+  color: var(--blanc);
 }
 .hero-title-excl {
   color: var(--or);
@@ -572,7 +571,7 @@ ul { list-style: none; }
 
 .kit-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 
@@ -718,45 +717,21 @@ ul { list-style: none; }
   margin-inline: auto;
   position: relative;
 }
-/* Ligne verticale centrale */
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 5.5rem;
-  top: 0; bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, transparent, var(--rouge-pale) 5%, var(--rouge-pale) 95%, transparent);
-}
 
 .tl-item {
   display: grid;
-  grid-template-columns: 5rem 1fr;
-  gap: 0 2rem;
-  padding-bottom: 2rem;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+  padding-bottom: 1.5rem;
   position: relative;
-}
-/* Dot sur la ligne */
-.tl-item::before {
-  content: '';
-  position: absolute;
-  left: calc(5.5rem - 5px);
-  top: 1.2rem;
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  background: var(--rouge);
-  border: 2.5px solid var(--blanc);
-  box-shadow: 0 0 0 3px var(--rouge-pale);
-  z-index: 1;
 }
 
 .tl-time {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--rouge);
   letter-spacing: 0.04em;
-  padding-top: 0.9rem;
-  text-align: right;
 }
 
 .tl-ticket {
@@ -927,7 +902,7 @@ ul { list-style: none; }
 
 .resa-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 1rem;
   max-width: 800px;
   margin-inline: auto;
@@ -1009,15 +984,13 @@ ul { list-style: none; }
 
 .faq-layout {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 4rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   align-items: start;
 }
 .faq-layout .section-header {
-  text-align: left;
+  text-align: center;
   margin-bottom: 0;
-  position: sticky;
-  top: 5rem;
 }
 
 .faq-list {
@@ -1082,8 +1055,8 @@ details[open] .faq-q { color: var(--rouge); }
 
 .infos-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   align-items: start;
 }
 
@@ -1220,77 +1193,118 @@ details[open] .faq-q { color: var(--rouge); }
 }
 .footer-link:hover { color: var(--blanc); }
 
+.footer-credit-wrap {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 1.25rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 0.02em;
+}
+.footer-heart {
+  color: var(--rouge-vif);
+  flex-shrink: 0;
+}
+
 /* ================================================
    RESPONSIVE — MOBILE FIRST
-   Breakpoint principal : 768px
+   Breakpoints : 480px → 640px → 900px
 ================================================ */
-@media (max-width: 900px) {
-  .faq-layout {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+
+/* Base (mobile) : tout est déjà défini en 1 col dans les composants */
+
+/* Tablette large / Desktop */
+@media (min-width: 480px) {
+  /* Hero date ticket perforations */
+  .hero-date-ticket::before,
+  .hero-date-ticket::after { display: block; }
+
+  /* Timeline complète avec ligne verticale */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 5.5rem;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--rouge-pale) 5%, var(--rouge-pale) 95%, transparent);
   }
-  .faq-layout .section-header {
-    position: static;
-    text-align: center;
+  .tl-item {
+    grid-template-columns: 5rem 1fr;
+    gap: 0 2rem;
+    padding-bottom: 2rem;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: calc(5.5rem - 5px);
+    top: 1.2rem;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--rouge);
+    border: 2.5px solid var(--blanc);
+    box-shadow: 0 0 0 3px var(--rouge-pale);
+    z-index: 1;
+  }
+  .tl-time {
+    font-size: 1rem;
+    padding-top: 0.9rem;
+    text-align: right;
   }
 }
 
-@media (max-width: 768px) {
-  /* Nav */
-  .nav-brand-name { display: none; }
-  .nav-links { display: none; }
+@media (min-width: 640px) {
+  /* Réservations — 2 colonnes */
+  .resa-grid { grid-template-columns: repeat(2, 1fr); }
 
-  /* Hero */
-  .hero-title { font-size: clamp(3.2rem, 16vw, 7rem); }
-  .hero-content { max-width: 100%; }
+  /* Infos pratiques — 2 colonnes */
+  .infos-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+}
+
+@media (min-width: 900px) {
+  /* Nav brand name visible */
+  .nav-brand-name { display: inline; }
+
+  /* Kit thème — 3 colonnes */
+  .kit-grid { grid-template-columns: repeat(3, 1fr); }
+
+  /* FAQ sticky header */
+  .faq-layout {
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+  }
+  .faq-layout .section-header {
+    text-align: left;
+    position: sticky;
+    top: 5rem;
+  }
+
+  /* Lauburu repositionné */
+  .lauburu-watermark {
+    right: -8%;
+    top: 50%;
+    width: min(55vw, 520px);
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+/* Footer — toujours centré sur mobile */
+@media (max-width: 639px) {
+  .footer-inner { flex-direction: column; text-align: center; }
+  .footer-brand { justify-content: center; }
+  .nav-brand-name { display: none; }
   .lauburu-watermark {
     right: -15%;
     width: 70vw;
-    opacity: 0.6;
-    top: 10%;
+    opacity: 0.55;
+    top: 8%;
     transform: none;
-  }
-
-  /* Thème kit — 1 col */
-  .kit-grid { grid-template-columns: 1fr; }
-
-  /* Timeline — ajuster la ligne */
-  .timeline::before { left: 4.5rem; }
-  .tl-item {
-    grid-template-columns: 4rem 1fr;
-    gap: 0 1.25rem;
-  }
-  .tl-item::before { left: calc(4.5rem - 5px); }
-
-  /* Activités — 2 col */
-  .act-grid { grid-template-columns: repeat(2, 1fr); }
-
-  /* Réservations — 1 col */
-  .resa-grid { grid-template-columns: 1fr; }
-
-  /* Infos — 1 col */
-  .infos-grid { grid-template-columns: 1fr; }
-
-  /* Footer */
-  .footer-inner { flex-direction: column; text-align: center; }
-  .footer-brand { justify-content: center; }
-}
-
-@media (max-width: 480px) {
-  /* Activités — 1 col */
-  .act-grid { grid-template-columns: 1fr; }
-
-  /* Hero date ticket perforations cachées (overflow) */
-  .hero-date-ticket::before,
-  .hero-date-ticket::after { display: none; }
-
-  /* Timeline simplifiée */
-  .timeline::before { display: none; }
-  .tl-item { grid-template-columns: 1fr; gap: 0.5rem; }
-  .tl-item::before { display: none; }
-  .tl-time {
-    text-align: left;
-    padding-top: 0;
-    font-size: 0.9rem;
   }
 }
