@@ -631,6 +631,49 @@ ul { list-style: none; }
 }
 
 /* ================================================
+   TICKER
+================================================ */
+.ticker-wrap {
+  background: var(--anthracite);
+  overflow: hidden;
+  height: 38px;
+  display: flex;
+  align-items: center;
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  white-space: nowrap;
+  animation: ticker-scroll 22s linear infinite;
+  will-change: transform;
+}
+
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+.ticker-item:hover { color: var(--or); }
+
+.ticker-sep {
+  color: var(--rouge);
+  font-size: 0.55rem;
+  flex-shrink: 0;
+}
+
+/* ================================================
    THÈME
 ================================================ */
 .theme {
