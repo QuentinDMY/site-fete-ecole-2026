@@ -1256,21 +1256,11 @@ details[open] .faq-q { color: var(--rouge); }
   gap: 0.75rem;
 }
 .footer-logo-mark {
-  width: 42px; height: 42px;
+  width: 36px; height: 36px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.08);
+  background: linear-gradient(135deg, var(--blanc) 50%, var(--rouge) 50%);
   border: 2px solid rgba(255,255,255,0.15);
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.footer-logo-mark img {
-  width: 78%;
-  height: 78%;
-  object-fit: contain;
-  display: block;
 }
 .footer-brand > div {
   display: flex;
