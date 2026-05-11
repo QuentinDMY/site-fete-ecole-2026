@@ -647,6 +647,110 @@
   </div>
 </footer>
 
+<!-- QUIZ FAB -->
+<button class="quiz-fab" id="quiz-fab" aria-label="Quiz Fêtes de Bayonne">
+  <span class="quiz-fab-icon" aria-hidden="true">🎉</span>
+  <span class="quiz-fab-label">Quiz Bayonne</span>
+</button>
+
+<!-- QUIZ MODAL (bottom sheet mobile) -->
+<div class="quiz-overlay" id="quiz-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="quiz-modal-title">
+  <div class="quiz-modal">
+
+    <button class="quiz-close" id="quiz-close" aria-label="Fermer le quiz">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+
+    <!-- INTRO -->
+    <div class="quiz-screen" id="quiz-intro">
+      <div class="quiz-screen-icon" aria-hidden="true">🥁</div>
+      <h2 class="quiz-title" id="quiz-modal-title">Connaissez-vous les Fêtes de Bayonne&nbsp;?</h2>
+      <p class="quiz-intro-desc">8 questions pour tester vos connaissances sur la plus grande féria du Sud-Ouest&nbsp;!</p>
+      <button class="btn quiz-start-btn" id="quiz-start">C'est parti — Aupa&nbsp;!</button>
+    </div>
+
+    <!-- QUESTION -->
+    <div class="quiz-screen quiz-screen--hidden" id="quiz-question">
+      <div class="quiz-progress-wrap">
+        <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress-fill"></div></div>
+        <span class="quiz-progress-label" id="quiz-progress-label">1 / 8</span>
+      </div>
+      <p class="quiz-q-text" id="quiz-q-text"></p>
+      <div class="quiz-answers" id="quiz-answers"></div>
+      <button class="btn quiz-next-btn quiz-next-btn--hidden" id="quiz-next">Question suivante →</button>
+    </div>
+
+    <!-- RÉSULTAT -->
+    <div class="quiz-screen quiz-screen--hidden" id="quiz-result">
+      <div class="quiz-screen-icon" id="quiz-result-icon" aria-hidden="true"></div>
+      <div class="quiz-score-wrap">
+        <span class="quiz-score-num" id="quiz-score-num"></span>
+        <span class="quiz-score-total">/8</span>
+      </div>
+      <h3 class="quiz-level-title" id="quiz-level-title"></h3>
+      <p class="quiz-level-desc" id="quiz-level-desc"></p>
+      <a class="btn quiz-share-btn" id="quiz-share-btn" target="_blank" rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.138.563 4.14 1.538 5.874L0 24l6.292-1.508A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.869 9.869 0 01-5.031-1.378l-.361-.214-3.735.979.997-3.648-.235-.374A9.848 9.848 0 012.118 12C2.118 6.533 6.533 2.118 12 2.118c5.466 0 9.882 4.415 9.882 9.882 0 5.466-4.416 9.882-9.882 9.882z"/></svg>
+        Partager sur WhatsApp
+      </a>
+      <button class="quiz-retry-btn" id="quiz-retry">Rejouer 🎲</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- QUIZ FAB -->
+<button class="quiz-fab" id="quiz-fab" aria-label="Quiz Fêtes de Bayonne">
+  <span class="quiz-fab-icon" aria-hidden="true">🎉</span>
+  <span class="quiz-fab-label">Quiz Bayonne</span>
+</button>
+
+<!-- QUIZ MODAL -->
+<div class="quiz-overlay" id="quiz-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="quiz-modal-title">
+  <div class="quiz-modal">
+
+    <button class="quiz-close" id="quiz-close" aria-label="Fermer le quiz">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+
+    <!-- INTRO -->
+    <div class="quiz-screen" id="quiz-intro">
+      <div class="quiz-intro-icon" aria-hidden="true">🥁</div>
+      <h2 class="quiz-modal-title" id="quiz-modal-title">Connaissez-vous<br>les Fêtes de Bayonne&nbsp;?</h2>
+      <p class="quiz-intro-desc">8 questions pour tester vos connaissances sur la plus grande féria du Sud-Ouest&nbsp;!</p>
+      <button class="btn quiz-start-btn" id="quiz-start">C'est parti — Aupa&nbsp;!</button>
+    </div>
+
+    <!-- QUESTION -->
+    <div class="quiz-screen quiz-screen--hidden" id="quiz-question">
+      <div class="quiz-progress-wrap">
+        <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-progress-fill"></div></div>
+        <span class="quiz-progress-label" id="quiz-progress-label">1 / 8</span>
+      </div>
+      <p class="quiz-q-text" id="quiz-q-text"></p>
+      <div class="quiz-answers" id="quiz-answers"></div>
+      <button class="btn quiz-next-btn quiz-next-btn--hidden" id="quiz-next">Question suivante →</button>
+    </div>
+
+    <!-- RÉSULTAT -->
+    <div class="quiz-screen quiz-screen--hidden" id="quiz-result">
+      <div class="quiz-result-icon" id="quiz-result-icon" aria-hidden="true"></div>
+      <div class="quiz-score-wrap">
+        <span class="quiz-score-num" id="quiz-score-num"></span>
+        <span class="quiz-score-total">/8</span>
+      </div>
+      <h3 class="quiz-level-title" id="quiz-level-title"></h3>
+      <p class="quiz-level-desc" id="quiz-level-desc"></p>
+      <a class="btn quiz-share-btn" id="quiz-share-btn" target="_blank" rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.138.563 4.14 1.538 5.874L0 24l6.292-1.508A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.869 9.869 0 01-5.031-1.378l-.361-.214-3.735.979.997-3.648-.235-.374A9.848 9.848 0 012.118 12C2.118 6.533 6.533 2.118 12 2.118c5.466 0 9.882 4.415 9.882 9.882 0 5.466-4.416 9.882-9.882 9.882z"/></svg>
+        Partager sur WhatsApp
+      </a>
+      <button class="quiz-retry-btn" id="quiz-retry">Rejouer 🎲</button>
+    </div>
+
+  </div>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>

@@ -157,3 +157,171 @@
     el.style.animationDuration = `${dur}s`;
   });
 })();
+
+/* ---- Quiz Fêtes de Bayonne ---- */
+(function initQuiz() {
+  const QUESTIONS = [
+    {
+      q: "À quelle période ont lieu les Fêtes de Bayonne ?",
+      answers: ["Fin juin", "Mi-juillet", "Première semaine d'août", "Fin août"],
+      correct: 2
+    },
+    {
+      q: "Quel est le cri emblématique des Fêtes de Bayonne ?",
+      answers: ["Olé Bayonne !", "Viva Baiona !", "Aupa Baiona !", "Hola Bayonne !"],
+      correct: 2
+    },
+    {
+      q: "Quelle est la tenue traditionnelle des Fêtes ?",
+      answers: ["Bleu et blanc", "Rouge et noir", "Blanc et vert", "Blanc et rouge"],
+      correct: 3
+    },
+    {
+      q: "Comment s'appelle la large ceinture rouge traditionnelle basque ?",
+      answers: ["La txapela", "La txingarra", "La txalaparta", "La txakoli"],
+      correct: 1
+    },
+    {
+      q: "En quelle année ont été créées les Fêtes de Bayonne ?",
+      answers: ["1897", "1921", "1932", "1958"],
+      correct: 2
+    },
+    {
+      q: "Combien de jours durent les Fêtes de Bayonne ?",
+      answers: ["3 jours", "4 jours", "5 jours", "7 jours"],
+      correct: 2
+    },
+    {
+      q: "Comment s'appelle le béret basque traditionnel ?",
+      answers: ["Txakoli", "Pilota", "Txapela", "Espadrille"],
+      correct: 2
+    },
+    {
+      q: "Comment se porte le foulard traditionnel des Fêtes ?",
+      answers: ["Attaché au poignet", "Sur la tête comme un bandana", "Plié en triangle, noué autour du cou", "Dans la poche du pantalon"],
+      correct: 2
+    }
+  ];
+
+  const LEVELS = [
+    { min: 0, max: 2, icon: "🎒", title: "Touriste en blanc et rouge", desc: "Bienvenue à Bayonne ! La féria vous attend — venez avec votre foulard rouge !" },
+    { min: 3, max: 4, icon: "🥁", title: "Péna débutant", desc: "Vous avez du potentiel ! Encore quelques fêtes et vous chanterez Aupa Baiona comme un vrai !" },
+    { min: 5, max: 6, icon: "🎉", title: "Ami des Bayonnais", desc: "Bien joué ! Vous connaissez vos classiques. On vous réserve un foulard rouge !" },
+    { min: 7, max: 8, icon: "🌟", title: "Vrai Baionaïs !", desc: "Impressionnant ! Vous êtes une référence des Fêtes. Aupa Baiona — on vous attend le 27 juin !" }
+  ];
+
+  const LETTERS = ['A', 'B', 'C', 'D'];
+
+  const fab        = document.getElementById('quiz-fab');
+  const overlay    = document.getElementById('quiz-overlay');
+  const closeBtn   = document.getElementById('quiz-close');
+  const introScr   = document.getElementById('quiz-intro');
+  const questionScr= document.getElementById('quiz-question');
+  const resultScr  = document.getElementById('quiz-result');
+  const startBtn   = document.getElementById('quiz-start');
+  const nextBtn    = document.getElementById('quiz-next');
+  const retryBtn   = document.getElementById('quiz-retry');
+  const qText      = document.getElementById('quiz-q-text');
+  const answersWrap= document.getElementById('quiz-answers');
+  const progFill   = document.getElementById('quiz-progress-fill');
+  const progLabel  = document.getElementById('quiz-progress-label');
+  const scoreNum   = document.getElementById('quiz-score-num');
+  const levelTitle = document.getElementById('quiz-level-title');
+  const levelDesc  = document.getElementById('quiz-level-desc');
+  const resultIcon = document.getElementById('quiz-result-icon');
+  const shareBtn   = document.getElementById('quiz-share-btn');
+
+  let current = 0;
+  let score   = 0;
+  let answered = false;
+
+  function openQuiz() {
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeQuiz() {
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function showScreen(id) {
+    [introScr, questionScr, resultScr].forEach(s => {
+      s.classList.toggle('quiz-screen--hidden', s.id !== id);
+    });
+  }
+
+  function loadQuestion() {
+    const q = QUESTIONS[current];
+    answered = false;
+    nextBtn.classList.add('quiz-next-btn--hidden');
+    progFill.style.width = `${(current / QUESTIONS.length) * 100}%`;
+    progLabel.textContent = `${current + 1} / ${QUESTIONS.length}`;
+    qText.textContent = q.q;
+
+    answersWrap.innerHTML = '';
+    q.answers.forEach((answer, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-answer';
+      btn.innerHTML = `<span class="quiz-answer-letter">${LETTERS[i]}</span><span>${answer}</span>`;
+      btn.addEventListener('click', () => selectAnswer(i));
+      answersWrap.appendChild(btn);
+    });
+  }
+
+  function selectAnswer(index) {
+    if (answered) return;
+    answered = true;
+
+    const q = QUESTIONS[current];
+    const buttons = answersWrap.querySelectorAll('.quiz-answer');
+    buttons.forEach((btn, i) => {
+      btn.disabled = true;
+      if (i === q.correct && i !== index) btn.classList.add('is-reveal');
+      else if (i === q.correct)           btn.classList.add('is-correct');
+      else if (i === index)               btn.classList.add('is-wrong');
+    });
+
+    if (index === q.correct) score++;
+
+    nextBtn.textContent = current === QUESTIONS.length - 1 ? 'Voir mon score 🎉' : 'Question suivante →';
+    nextBtn.classList.remove('quiz-next-btn--hidden');
+  }
+
+  function showResult() {
+    progFill.style.width = '100%';
+    const level = LEVELS.find(l => score >= l.min && score <= l.max);
+    scoreNum.textContent  = score;
+    resultIcon.textContent = level.icon;
+    levelTitle.textContent = level.title;
+    levelDesc.textContent  = level.desc;
+
+    const text = encodeURIComponent(
+      `🎉 J'ai scoré ${score}/8 au Quiz Fêtes de Bayonne — "${level.title}" !\n\nEt toi ? Teste-toi ici 👉 https://fete-ecole-saint-claude-2026.vercel.app`
+    );
+    shareBtn.href = `https://wa.me/?text=${text}`;
+    showScreen('quiz-result');
+  }
+
+  function startQuiz() {
+    current  = 0;
+    score    = 0;
+    showScreen('quiz-question');
+    loadQuestion();
+  }
+
+  fab.addEventListener('click', openQuiz);
+  closeBtn.addEventListener('click', closeQuiz);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeQuiz(); });
+  startBtn.addEventListener('click', startQuiz);
+  nextBtn.addEventListener('click', () => {
+    current++;
+    current < QUESTIONS.length ? loadQuestion() : showResult();
+  });
+  retryBtn.addEventListener('click', startQuiz);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeQuiz();
+  });
+})();
