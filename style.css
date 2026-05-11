@@ -1158,6 +1158,41 @@ ul { list-style: none; }
 }
 .resa-btn:hover .resa-arrow { transform: translateX(4px); opacity: 1; }
 
+/* ---- État "bientôt disponible" ---- */
+.resa-btn--soon {
+  opacity: 0.45;
+  pointer-events: none;
+  cursor: default;
+  filter: grayscale(0.3);
+}
+.resa-soon-icon {
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.resa-soon-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+  margin-inline: auto;
+  max-width: 480px;
+  padding: 0.85rem 1.4rem;
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.02em;
+  line-height: 1.45;
+  backdrop-filter: blur(6px);
+  text-align: center;
+}
+.resa-soon-notice svg { flex-shrink: 0; opacity: 0.8; }
+
 /* ================================================
    FAQ
 ================================================ */
