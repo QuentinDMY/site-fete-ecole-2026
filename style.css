@@ -507,7 +507,7 @@ ul { list-style: none; }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(5rem, 16vw, 14rem);
+  font-size: clamp(4rem, 13vw, 8rem);
   line-height: 0.92;
   letter-spacing: 0.01em;
   color: var(--blanc);
@@ -1432,6 +1432,11 @@ details[open] .faq-q { color: var(--rouge); }
 
 /* Tablette large / Desktop */
 @media (min-width: 480px) {
+  /* Hero : degage le deuxieme rang de fanions (~148px) */
+  .hero-content {
+    padding-top: clamp(7rem, 18vw, 10rem);
+  }
+
   /* Hero date ticket perforations */
   .hero-date-ticket::before,
   .hero-date-ticket::after { display: block; }
@@ -1475,6 +1480,11 @@ details[open] .faq-q { color: var(--rouge); }
 }
 
 @media (min-width: 900px) {
+  /* Hero : padding confortable sur grand ecran */
+  .hero-content {
+    padding-top: clamp(5rem, 10vw, 7rem);
+  }
+
   /* Nav brand name visible */
   .nav-brand-name { display: inline; }
 
