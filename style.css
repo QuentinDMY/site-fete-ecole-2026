@@ -1783,6 +1783,22 @@ details[open] .faq-q { color: var(--rouge); }
 }
 .quiz-answer.is-reveal .quiz-answer-letter { background: #059669; color: #fff; }
 
+/* ---- Explication ---- */
+.quiz-explanation {
+  width: 100%;
+  background: var(--rouge-pale);
+  border-left: 3px solid var(--rouge);
+  border-radius: 0 0.6rem 0.6rem 0;
+  padding: 0.85rem 1rem;
+  font-size: 0.88rem;
+  color: var(--gris);
+  line-height: 1.6;
+  text-align: left;
+  margin-bottom: 1rem;
+  animation: faq-open 0.3s var(--easing);
+}
+.quiz-explanation--hidden { display: none !important; }
+
 /* ---- Bouton suivant ---- */
 .quiz-next-btn {
   background: var(--anthracite);

@@ -162,44 +162,52 @@
 (function initQuiz() {
   const QUESTIONS = [
     {
-      q: "À quelle période ont lieu les Fêtes de Bayonne ?",
-      answers: ["Fin juin", "Mi-juillet", "Première semaine d'août", "Fin août"],
-      correct: 2
-    },
-    {
-      q: "Quel est le cri emblématique des Fêtes de Bayonne ?",
-      answers: ["Olé Bayonne !", "Viva Baiona !", "Aupa Baiona !", "Hola Bayonne !"],
-      correct: 2
-    },
-    {
-      q: "Quelle est la tenue traditionnelle des Fêtes ?",
-      answers: ["Bleu et blanc", "Rouge et noir", "Blanc et vert", "Blanc et rouge"],
-      correct: 3
-    },
-    {
-      q: "Comment s'appelle la large ceinture rouge traditionnelle basque ?",
-      answers: ["La txapela", "La txingarra", "La txalaparta", "La txakoli"],
-      correct: 1
-    },
-    {
       q: "En quelle année ont été créées les Fêtes de Bayonne ?",
       answers: ["1897", "1921", "1932", "1958"],
-      correct: 2
+      correct: 2,
+      explanation: "Les premières Fêtes sont officiellement déclarées ouvertes le 13 juillet 1932. Et la petite bande de copains à l'origine de l'aventure ? Des joueurs de rugby de l'Aviron Bayonnais — qui devenaient champions de France deux ans plus tard !"
     },
     {
-      q: "Combien de jours durent les Fêtes de Bayonne ?",
-      answers: ["3 jours", "4 jours", "5 jours", "7 jours"],
-      correct: 2
+      q: "Qui est réellement à l'origine des Fêtes de Bayonne ?",
+      answers: ["Le maire Joseph Garat", "Des toreros venus d'Espagne", "Des joueurs de rugby de l'Aviron Bayonnais", "Le Comité du tourisme basque"],
+      correct: 2,
+      explanation: "Ces amis habitués des Sanfermines de Pampelune ont voulu créer la même ambiance à Bayonne. C'est Benjamin Gomez, président du Comité des Fêtes, qui a concrétisé l'idée avec la mairie."
     },
     {
-      q: "Comment s'appelle le béret basque traditionnel ?",
-      answers: ["Txakoli", "Pilota", "Txapela", "Espadrille"],
-      correct: 2
+      q: "Quelle est la tenue traditionnelle des festayres ?",
+      answers: ["Bleu et blanc", "Blanc et rouge", "Rouge et noir", "Blanc et vert"],
+      correct: 1,
+      explanation: "Enfiler sa tenue blanche et nouer son foulard rouge : ce sont les gestes quotidiens de milliers de « festayres » — le nom donné à ceux qui vivent les Fêtes avec passion et respect."
     },
     {
-      q: "Comment se porte le foulard traditionnel des Fêtes ?",
-      answers: ["Attaché au poignet", "Sur la tête comme un bandana", "Plié en triangle, noué autour du cou", "Dans la poche du pantalon"],
-      correct: 2
+      q: "Depuis quelle année la tradition du lancer des clés depuis le balcon de la mairie existe-t-elle ?",
+      answers: ["1932", "1947", "1965", "1987"],
+      correct: 1,
+      explanation: "Depuis 1947, à l'initiative du maire Maurice Delay, 3 clés sont lancées à l'ouverture des Fêtes. Elles symbolisent les 3 grands quartiers de Bayonne : Grand Bayonne, Saint-Esprit et Petit Bayonne."
+    },
+    {
+      q: "Pourquoi dit-on « Fêtes » et non « Feria » à Bayonne ?",
+      answers: ["Par décision du préfet en 1932", "Pour rappeler les origines chrétiennes de l'événement", "Pour mettre l'accent sur les traditions basques et gasconnes", "Parce que « feria » est un mot espagnol interdit"],
+      correct: 2,
+      explanation: "Bayonne est la seule grande ville du Sud à ne pas appeler son événement une « feria ». Tout y est labellisé tradition locale : courses de vaches, pelote basque, bandas, danses, chœurs d'hommes..."
+    },
+    {
+      q: "Qui est le roi Léon ?",
+      answers: ["Le premier maire des Fêtes en 1932", "Une figure emblématique de Bayonne élue roi par une banda en 1949", "Le capitaine de l'équipe de rugby de l'Aviron Bayonnais", "Le chocolatier officiel de la cour royale"],
+      correct: 1,
+      explanation: "Léon Dacharry a été choisi roi le 5 août 1949 par la banda les Batsarous — pour prendre le contrepied de l'élection de la reine des Fêtes. Il avait de la prestance, une belle voix, et se prêtait au jeu avec humour."
+    },
+    {
+      q: "En quelle année le roi Léon est-il devenu la mascotte officielle des Fêtes ?",
+      answers: ["1949", "1969", "1987", "1995"],
+      correct: 2,
+      explanation: "En 1987, le Club Or Konpon commande à Jean Duverdier un personnage inspiré de la « poupée » icône des festivités de Vitoria Gasteiz. Depuis le 5 août 1987, Léon veille depuis le balcon de la mairie — du mercredi à minuit le dimanche."
+    },
+    {
+      q: "Combien de personnages composent aujourd'hui la cour du roi Léon ?",
+      answers: ["3", "4", "5", "6"],
+      correct: 3,
+      explanation: "La favorite, le médecin, la gouvernante, le chocolatier, le maréchal et le fou ! Portés par l'association Tipi Tapa, ils défilent chaque matin à 10h dans les rues de Bayonne pour aller réveiller le roi place de la Liberté."
     }
   ];
 
@@ -223,8 +231,9 @@
   const retryBtn   = document.getElementById('quiz-retry');
   const qText      = document.getElementById('quiz-q-text');
   const answersWrap= document.getElementById('quiz-answers');
-  const progFill   = document.getElementById('quiz-progress-fill');
-  const progLabel  = document.getElementById('quiz-progress-label');
+  const progFill    = document.getElementById('quiz-progress-fill');
+  const progLabel   = document.getElementById('quiz-progress-label');
+  const explanation = document.getElementById('quiz-explanation');
   const scoreNum   = document.getElementById('quiz-score-num');
   const levelTitle = document.getElementById('quiz-level-title');
   const levelDesc  = document.getElementById('quiz-level-desc');
@@ -257,6 +266,8 @@
     const q = QUESTIONS[current];
     answered = false;
     nextBtn.classList.add('quiz-next-btn--hidden');
+    explanation.classList.add('quiz-explanation--hidden');
+    explanation.textContent = '';
     progFill.style.width = `${(current / QUESTIONS.length) * 100}%`;
     progLabel.textContent = `${current + 1} / ${QUESTIONS.length}`;
     qText.textContent = q.q;
@@ -287,6 +298,8 @@
     if (index === q.correct) score++;
 
     nextBtn.textContent = current === QUESTIONS.length - 1 ? 'Voir mon score 🎉' : 'Question suivante →';
+    explanation.textContent = q.explanation;
+    explanation.classList.remove('quiz-explanation--hidden');
     nextBtn.classList.remove('quiz-next-btn--hidden');
   }
 
