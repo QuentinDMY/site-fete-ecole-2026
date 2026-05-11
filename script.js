@@ -1,5 +1,5 @@
 /* ================================================
-   FÊTE ÉCOLE SAINT-CLAUDE — script.js
+   FÊTE ÉCOLE SAINT-CLAUDE - script.js
 ================================================ */
 
 /* ---- Confetti féria ---- */
@@ -177,7 +177,7 @@
       q: "Quelle est la tenue traditionnelle des festayres ?",
       answers: ["Bleu et blanc", "Blanc et rouge", "Rouge et noir", "Blanc et vert"],
       correct: 1,
-      explanation: "Enfiler sa tenue blanche et nouer son foulard rouge : ce sont les gestes quotidiens de milliers de « festayres » — le nom donné à ceux qui vivent les Fêtes avec passion et respect."
+      explanation: "Enfiler sa tenue blanche et nouer son foulard rouge : ce sont les gestes quotidiens de milliers de « festayres », le nom donné à ceux qui vivent les Fêtes avec passion et respect."
     },
     {
       q: "Que jette le maire de Bayonne en compagnie d'une célébrité, du haut du balcon de la mairie, pour célébrer l'ouverture officielle des Fêtes ?",
@@ -195,7 +195,7 @@
       q: "À qui fait référence le roi Léon, qui succéda à la reine des Fêtes ?",
       answers: ["Au 1er maire de la ville de Bayonne", "À un soldat qui s'illustra pendant la 2e Guerre mondiale", "À Léon Dacharry, figure emblématique de Bayonne reconnu pour sa belle voix", "À un chocolatier reconnu de Bayonne"],
       correct: 2,
-      explanation: "Le 5 août 1949, la banda les Batsarous choisit Léon Dacharry pour « roi » — pour prendre le contrepied de l'élection de la reine des Fêtes. Il avait de la prestance et se prêtait au jeu avec humour. La mascotte telle qu'on la connaît n'apparaît, elle, qu'en 1987 !"
+      explanation: "Le 5 août 1949, la banda les Batsarous choisit Léon Dacharry pour « roi », pour prendre le contrepied de l'élection de la reine des Fêtes. Il avait de la prestance et se prêtait au jeu avec humour. La mascotte telle qu'on la connaît n'apparaît, elle, qu'en 1987 !"
     },
     {
       q: "Combien de jours durent les Fêtes de Bayonne ?",
@@ -212,10 +212,10 @@
   ];
 
   const LEVELS = [
-    { min: 0, max: 2, icon: "🎒", title: "Touriste en blanc et rouge", desc: "Bienvenue à Bayonne ! La féria vous attend — venez avec votre foulard rouge !" },
+    { min: 0, max: 2, icon: "🎒", title: "Touriste en blanc et rouge", desc: "Bienvenue à Bayonne ! La féria vous attend, venez avec votre foulard rouge !" },
     { min: 3, max: 4, icon: "🥁", title: "Péna débutant", desc: "Vous avez du potentiel ! Encore quelques fêtes et vous chanterez Aupa Baiona comme un vrai !" },
     { min: 5, max: 6, icon: "🎉", title: "Ami des Bayonnais", desc: "Bien joué ! Vous connaissez vos classiques. On vous réserve un foulard rouge !" },
-    { min: 7, max: 8, icon: "🌟", title: "Vrai Baionaïs !", desc: "Impressionnant ! Vous êtes une référence des Fêtes. Aupa Baiona — on vous attend le 27 juin !" }
+    { min: 7, max: 8, icon: "🌟", title: "Vrai Baionaïs !", desc: "Impressionnant ! Vous êtes une référence des Fêtes. Aupa Baiona, on vous attend le 27 juin !" }
   ];
 
   const LETTERS = ['A', 'B', 'C', 'D'];
@@ -312,7 +312,7 @@
     levelDesc.textContent  = level.desc;
 
     const text = encodeURIComponent(
-      `🎉 J'ai scoré ${score}/8 au Quiz Fêtes de Bayonne — "${level.title}" !\n\nEt toi ? Teste-toi ici 👉 https://fete-ecole-saint-claude-2026.vercel.app`
+      `🎉 J'ai scoré ${score}/8 au Quiz Fêtes de Bayonne : "${level.title}" !\n\nEt toi ? Teste-toi ici 👉 https://fete-ecole-saint-claude-2026.vercel.app`
     );
     shareBtn.href = `https://wa.me/?text=${text}`;
     showScreen('quiz-result');

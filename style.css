@@ -1,4 +1,4 @@
-/* ================================================
+﻿/* ================================================
    DESIGN TOKENS & RESET
 ================================================ */
 :root {
@@ -442,7 +442,7 @@ ul { list-style: none; }
 .fanion.rouge { border-top-color: var(--rouge-fonce); }
 .fanion.blanc { border-top-color: rgba(255,255,255,0.92); }
 
-/* Décalage du sway pour effet de vague */
+/* DÃ©calage du sway pour effet de vague */
 .rope-1 .fanion:nth-child(2n)  { animation-delay: -0.3s; }
 .rope-1 .fanion:nth-child(3n)  { animation-delay: -0.7s; }
 .rope-1 .fanion:nth-child(4n)  { animation-delay: -1.1s; }
@@ -533,7 +533,7 @@ ul { list-style: none; }
   margin-bottom: 2rem;
 }
 
-/* Appel à la mobilisation */
+/* Appel Ã  la mobilisation */
 .hero-cri {
   font-family: var(--font-heading);
   font-style: italic;
@@ -674,7 +674,7 @@ ul { list-style: none; }
 }
 
 /* ================================================
-   THÈME
+   THÃˆME
 ================================================ */
 .theme {
   background: var(--blanc-chaud);
@@ -877,7 +877,7 @@ ul { list-style: none; }
   position: relative;
 }
 .dc-list li::before {
-  content: '—';
+  content: 'Â·';
   position: absolute;
   left: 0;
   color: rgba(0,0,0,0.2);
@@ -933,7 +933,7 @@ ul { list-style: none; }
   transform: translateX(4px);
   box-shadow: var(--shadow-soft);
 }
-/* Accent rouge à gauche */
+/* Accent rouge Ã  gauche */
 .tl-ticket::before {
   content: '';
   position: absolute;
@@ -968,7 +968,7 @@ ul { list-style: none; }
 }
 
 /* ================================================
-   ACTIVITÉS
+   ACTIVITÃ‰S
 ================================================ */
 .activites {
   background: var(--blanc-chaud);
@@ -980,7 +980,7 @@ ul { list-style: none; }
   gap: 1.25rem;
 }
 
-/* Double-bezel activités */
+/* Double-bezel activitÃ©s */
 .act-outer {
   background: rgba(200,16,46,0.04);
   border: 1px solid rgba(200,16,46,0.09);
@@ -1047,7 +1047,7 @@ ul { list-style: none; }
 }
 
 /* ================================================
-   RÉSERVATIONS (fond rouge)
+   RÃ‰SERVATIONS (fond rouge)
 ================================================ */
 .reservations {
   background: linear-gradient(135deg, var(--rouge-vif) 0%, var(--rouge) 50%, var(--rouge-fonce) 100%);
@@ -1158,7 +1158,7 @@ ul { list-style: none; }
 }
 .resa-btn:hover .resa-arrow { transform: translateX(4px); opacity: 1; }
 
-/* ---- État "bientôt disponible" ---- */
+/* ---- Ã‰tat "bientÃ´t disponible" ---- */
 .resa-btn--soon {
   opacity: 0.45;
   pointer-events: none;
@@ -1424,11 +1424,11 @@ details[open] .faq-q { color: var(--rouge); }
 .footer-credit:hover .footer-logo-qdm { opacity: 0.9; }
 
 /* ================================================
-   RESPONSIVE — MOBILE FIRST
-   Breakpoints : 480px → 640px → 900px
+   RESPONSIVE â€” MOBILE FIRST
+   Breakpoints : 480px â†’ 640px â†’ 900px
 ================================================ */
 
-/* Base (mobile) : tout est déjà défini en 1 col dans les composants */
+/* Base (mobile) : tout est dÃ©jÃ  dÃ©fini en 1 col dans les composants */
 
 /* Tablette large / Desktop */
 @media (min-width: 480px) {
@@ -1436,7 +1436,7 @@ details[open] .faq-q { color: var(--rouge); }
   .hero-date-ticket::before,
   .hero-date-ticket::after { display: block; }
 
-  /* Timeline complète avec ligne verticale */
+  /* Timeline complÃ¨te avec ligne verticale */
   .timeline::before {
     content: '';
     position: absolute;
@@ -1470,7 +1470,7 @@ details[open] .faq-q { color: var(--rouge); }
 }
 
 @media (min-width: 640px) {
-  /* Réservations — 2 colonnes */
+  /* RÃ©servations â€” 2 colonnes */
   .resa-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -1478,7 +1478,7 @@ details[open] .faq-q { color: var(--rouge); }
   /* Nav brand name visible */
   .nav-brand-name { display: inline; }
 
-  /* Kit thème — 2 colonnes (2×2) */
+  /* Kit theme - 2 colonnes (2x2) */
   .kit-grid { grid-template-columns: repeat(2, 1fr); }
 
   /* FAQ sticky header */
@@ -1492,7 +1492,7 @@ details[open] .faq-q { color: var(--rouge); }
     top: 5rem;
   }
 
-  /* Lauburu repositionné */
+  /* Lauburu repositionnÃ© */
   .lauburu-watermark {
     right: -8%;
     top: 50%;
@@ -1505,7 +1505,7 @@ details[open] .faq-q { color: var(--rouge); }
 /* ---- Hero mobile ---- */
 @media (max-width: 479px) {
   .hero {
-    /* Fanions rope-2 descend jusqu'à ~128px — on dégage proprement */
+    /* Fanions rope-2 descend jusqu'Ã  ~128px â€” on dÃ©gage proprement */
     padding-top: 0;
     min-height: 100svh;
   }
@@ -1517,7 +1517,7 @@ details[open] .faq-q { color: var(--rouge); }
     text-align: center;
   }
 
-  /* Titre : remplit la largeur écran, ultra-impactant */
+  /* Titre : remplit la largeur Ã©cran, ultra-impactant */
   .hero-title {
     font-size: clamp(3.8rem, 20vw, 5rem);
     line-height: 0.88;
@@ -1529,14 +1529,14 @@ details[open] .faq-q { color: var(--rouge); }
     line-height: 0.75;
   }
 
-  /* Sous-titre : italique, aéré */
+  /* Sous-titre : italique, aÃ©rÃ© */
   .hero-subtitle {
     font-size: 1.05rem;
     letter-spacing: 0.03em;
     margin-bottom: 1.6rem;
   }
 
-  /* Ticket date : taille réduite mais confortable */
+  /* Ticket date : taille rÃ©duite mais confortable */
   .hero-date {
     margin-bottom: 1.6rem;
   }
@@ -1559,7 +1559,7 @@ details[open] .faq-q { color: var(--rouge); }
     font-size: 0.75rem;
   }
 
-  /* CTA pleine largeur — bien plus impactant sur mobile */
+  /* CTA pleine largeur â€” bien plus impactant sur mobile */
   .btn-hero {
     width: 100%;
     justify-content: center;
@@ -1644,7 +1644,7 @@ details[open] .faq-q { color: var(--rouge); }
   transform: translateY(0);
 }
 
-/* Desktop : carte centrée */
+/* Desktop : carte centrÃ©e */
 @media (min-width: 640px) {
   .quiz-overlay { align-items: center; }
   .quiz-modal {
@@ -1846,7 +1846,7 @@ details[open] .faq-q { color: var(--rouge); }
 .quiz-next-btn:hover { background: var(--rouge); }
 .quiz-next-btn--hidden { display: none !important; }
 
-/* ---- Résultat ---- */
+/* ---- RÃ©sultat ---- */
 .quiz-result-icon { font-size: 3.5rem; margin-bottom: 0.5rem; line-height: 1; }
 
 .quiz-score-wrap {
@@ -1915,7 +1915,7 @@ details[open] .faq-q { color: var(--rouge); }
 }
 .quiz-retry-btn:hover { color: var(--anthracite); }
 
-/* Footer — toujours centré sur mobile */
+/* Footer â€” toujours centrÃ© sur mobile */
 @media (max-width: 639px) {
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-brand { justify-content: center; }
@@ -1931,3 +1931,4 @@ details[open] .faq-q { color: var(--rouge); }
     transform: none;
   }
 }
+
