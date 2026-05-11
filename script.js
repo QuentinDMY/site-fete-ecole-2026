@@ -165,13 +165,13 @@
       q: "En quelle année ont été créées les Fêtes de Bayonne ?",
       answers: ["1897", "1921", "1932", "1958"],
       correct: 2,
-      explanation: "Les premières Fêtes sont officiellement déclarées ouvertes le 13 juillet 1932. Et la petite bande de copains à l'origine de l'aventure ? Des joueurs de rugby de l'Aviron Bayonnais — qui devenaient champions de France deux ans plus tard !"
+      explanation: "Les premières Fêtes sont officiellement déclarées ouvertes le mercredi 13 juillet 1932. Au programme de cette première édition : aubades, courses de vaches dans les rues du Petit Bayonne, et la toute première sortie des Géants de Bayonne !"
     },
     {
-      q: "Qui est réellement à l'origine des Fêtes de Bayonne ?",
-      answers: ["Le maire Joseph Garat", "Des toreros venus d'Espagne", "Des joueurs de rugby de l'Aviron Bayonnais", "Le Comité du tourisme basque"],
+      q: "Qui est à l'origine des Fêtes de Bayonne ?",
+      answers: ["Le maire de l'époque Joseph Garat", "Des toreros venus d'Espagne", "Des joueurs de rugby de l'Aviron Bayonnais", "Le Comité du tourisme basque"],
       correct: 2,
-      explanation: "Ces amis habitués des Sanfermines de Pampelune ont voulu créer la même ambiance à Bayonne. C'est Benjamin Gomez, président du Comité des Fêtes, qui a concrétisé l'idée avec la mairie."
+      explanation: "Ces amis habitués des Sanfermines de Pampelune ont voulu créer la même ambiance à Bayonne. Deux ans après avoir lancé les Fêtes, ils devenaient champions de France de rugby face aux voisins biarrots !"
     },
     {
       q: "Quelle est la tenue traditionnelle des festayres ?",
@@ -180,10 +180,10 @@
       explanation: "Enfiler sa tenue blanche et nouer son foulard rouge : ce sont les gestes quotidiens de milliers de « festayres » — le nom donné à ceux qui vivent les Fêtes avec passion et respect."
     },
     {
-      q: "Depuis quelle année la tradition du lancer des clés depuis le balcon de la mairie existe-t-elle ?",
-      answers: ["1932", "1947", "1965", "1987"],
-      correct: 1,
-      explanation: "Depuis 1947, à l'initiative du maire Maurice Delay, 3 clés sont lancées à l'ouverture des Fêtes. Elles symbolisent les 3 grands quartiers de Bayonne : Grand Bayonne, Saint-Esprit et Petit Bayonne."
+      q: "Que jette le maire de Bayonne en compagnie d'une célébrité, du haut du balcon de la mairie, pour célébrer l'ouverture officielle des Fêtes ?",
+      answers: ["Les 3 clés de la ville", "Le foulard des Fêtes", "Un verre de sangria", "Un ballon de rugby"],
+      correct: 0,
+      explanation: "Depuis 1947, le maire lance les 3 clés symbolisant les 3 grands quartiers de Bayonne : Grand Bayonne, Saint-Esprit et Petit Bayonne. Johnny Hallyday, Mireille Mathieu, Yannick Noah, Patrick Bruel... les plus grands noms s'y sont succédé !"
     },
     {
       q: "Pourquoi dit-on « Fêtes » et non « Feria » à Bayonne ?",
@@ -192,16 +192,16 @@
       explanation: "Bayonne est la seule grande ville du Sud à ne pas appeler son événement une « feria ». Tout y est labellisé tradition locale : courses de vaches, pelote basque, bandas, danses, chœurs d'hommes..."
     },
     {
-      q: "Qui est le roi Léon ?",
-      answers: ["Le premier maire des Fêtes en 1932", "Une figure emblématique de Bayonne élue roi par une banda en 1949", "Le capitaine de l'équipe de rugby de l'Aviron Bayonnais", "Le chocolatier officiel de la cour royale"],
-      correct: 1,
-      explanation: "Léon Dacharry a été choisi roi le 5 août 1949 par la banda les Batsarous — pour prendre le contrepied de l'élection de la reine des Fêtes. Il avait de la prestance, une belle voix, et se prêtait au jeu avec humour."
+      q: "À qui fait référence le roi Léon, qui succéda à la reine des Fêtes ?",
+      answers: ["Au 1er maire de la ville de Bayonne", "À un soldat qui s'illustra pendant la 2e Guerre mondiale", "À Léon Dacharry, figure emblématique de Bayonne reconnu pour sa belle voix", "À un chocolatier reconnu de Bayonne"],
+      correct: 2,
+      explanation: "Le 5 août 1949, la banda les Batsarous choisit Léon Dacharry pour « roi » — pour prendre le contrepied de l'élection de la reine des Fêtes. Il avait de la prestance et se prêtait au jeu avec humour. La mascotte telle qu'on la connaît n'apparaît, elle, qu'en 1987 !"
     },
     {
-      q: "En quelle année le roi Léon est-il devenu la mascotte officielle des Fêtes ?",
-      answers: ["1949", "1969", "1987", "1995"],
+      q: "Combien de jours durent les Fêtes de Bayonne ?",
+      answers: ["3 jours", "4 jours", "5 jours", "7 jours"],
       correct: 2,
-      explanation: "En 1987, le Club Or Konpon commande à Jean Duverdier un personnage inspiré de la « poupée » icône des festivités de Vitoria Gasteiz. Depuis le 5 août 1987, Léon veille depuis le balcon de la mairie — du mercredi à minuit le dimanche."
+      explanation: "Les Fêtes durent exactement 5 jours et 5 nuits, du mercredi au dimanche. Un programme intense où la musique vivante est à l'honneur : chœurs d'hommes, bandas, orchestres et groupes de musique traditionnelle animent sans relâche les rues de Bayonne."
     },
     {
       q: "Combien de personnages composent aujourd'hui la cour du roi Léon ?",
