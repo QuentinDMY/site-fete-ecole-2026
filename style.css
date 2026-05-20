@@ -1193,6 +1193,95 @@ ul { list-style: none; }
 }
 .resa-soon-notice svg { flex-shrink: 0; opacity: 0.8; }
 
+.resa-tarifs {
+  margin: 2rem auto 0;
+  max-width: 800px;
+}
+.resa-tarifs-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 1rem;
+}
+.resa-tarifs-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  text-align: left;
+}
+.resa-tarif-col {
+  background: rgba(255,255,255,0.07);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: 1rem;
+  padding: 1.25rem 1.4rem;
+}
+.resa-tarif-who {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 0.85rem;
+}
+.resa-tarif-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.resa-tarif-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.8);
+}
+.resa-tarif-list li strong {
+  font-size: 0.95rem;
+  font-family: var(--font-heading);
+  color: var(--or);
+  white-space: nowrap;
+}
+.resa-tarif-detail {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+  margin: 0 0 0.85rem;
+  line-height: 1.5;
+}
+.resa-tarif-activites-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 0.4rem;
+}
+.resa-tarif-activites {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.7);
+}
+.resa-tarif-note {
+  display: block;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 0.1rem;
+}
+@media (max-width: 540px) {
+  .resa-tarifs-cols { grid-template-columns: 1fr; }
+}
+
 /* ================================================
    FAQ
 ================================================ */
