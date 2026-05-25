@@ -1178,37 +1178,30 @@ ul { list-style: none; }
   opacity: 0.6;
 }
 
-.resa-soon-notice {
+.btn-resa-cta {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  margin-top: 1.75rem;
+  margin-top: 2rem;
   margin-inline: auto;
-  max-width: 480px;
-  padding: 0.85rem 1.4rem;
-  background: rgba(255,255,255,0.1);
-  border: 1.5px solid rgba(255,255,255,0.25);
+  padding: 1rem 2rem;
+  background: var(--or);
+  color: var(--anthracite);
   border-radius: var(--radius-pill);
   font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.88rem;
-  color: rgba(255,255,255,0.85);
-  letter-spacing: 0.02em;
-  line-height: 1.45;
-  backdrop-filter: blur(6px);
-  text-align: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  box-shadow: 0 8px 32px rgba(242,194,48,0.35);
+  transition: background 0.25s var(--easing), transform 0.25s var(--easing), box-shadow 0.25s;
 }
-.resa-soon-notice svg { flex-shrink: 0; opacity: 0.8; }
-a.resa-soon-notice {
-  transition: background 0.25s var(--easing), border-color 0.25s, transform 0.25s var(--easing);
-  cursor: pointer;
+.btn-resa-cta:hover {
+  background: var(--or-fonce);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(242,194,48,0.45);
 }
-a.resa-soon-notice:hover {
-  background: rgba(255,255,255,0.2);
-  border-color: rgba(255,255,255,0.5);
-  transform: translateY(-2px);
-}
+.btn-resa-cta:active { transform: translateY(0) scale(0.98); }
 
 .resa-tarifs {
   margin: 2.5rem auto 0;
