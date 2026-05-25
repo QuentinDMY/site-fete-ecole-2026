@@ -1200,6 +1200,15 @@ ul { list-style: none; }
   text-align: center;
 }
 .resa-soon-notice svg { flex-shrink: 0; opacity: 0.8; }
+a.resa-soon-notice {
+  transition: background 0.25s var(--easing), border-color 0.25s, transform 0.25s var(--easing);
+  cursor: pointer;
+}
+a.resa-soon-notice:hover {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.5);
+  transform: translateY(-2px);
+}
 
 .resa-tarifs {
   margin: 2.5rem auto 0;
